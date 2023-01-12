@@ -181,6 +181,12 @@ router.delete('/:id', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
     try {
         // Your code here
+        if(req.params.id===req.body.id){
+        const tree = await Tree.findByPk(req.params.id)
+            if(!tree){
+                
+            }
+    }
     } catch(err) {
         next({
             status: "error",
